@@ -1,0 +1,18 @@
+{
+  "name": "cluster-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fpk/cli": "^0.1.58",
+    "@fpk/k8s": "^0.6.1",
+    "effect": "https://pkg.pr.new/Effect-TS/effect@e61328e",
+    "prettier": "^3.5.2"
+  }
+}
