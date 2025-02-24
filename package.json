@@ -2,7 +2,6 @@
   "name": "cluster-docker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +9,37 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@effect/cluster": "https://pkg.pr.new/Effect-TS/effect/@effect/cluster@16c2356",
+    "@effect/platform": "https://pkg.pr.new/Effect-TS/effect/@effect/platform@16c2356",
+    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@16c2356",
+    "@effect/platform-node-shared": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@16c2356",
+    "@effect/rpc": "https://pkg.pr.new/Effect-TS/effect/@effect/rpc@16c2356",
+    "@effect/sql": "https://pkg.pr.new/Effect-TS/effect/@effect/sql@16c2356",
+    "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@16c2356",
     "@fpk/cli": "^0.1.58",
     "@fpk/k8s": "^0.6.1",
-    "effect": "https://pkg.pr.new/Effect-TS/effect@e61328e",
-    "prettier": "^3.5.2"
+    "effect": "https://pkg.pr.new/Effect-TS/effect@16c2356",
+    "prettier": "^3.5.2",
+    "tsup": "^8.3.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "@effect/cluster": "https://pkg.pr.new/Effect-TS/effect/@effect/cluster@16c2356",
+      "@effect/platform": "https://pkg.pr.new/Effect-TS/effect/@effect/platform@16c2356",
+      "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@16c2356",
+      "@effect/platform-node-shared": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@16c2356",
+      "@effect/rpc": "https://pkg.pr.new/Effect-TS/effect/@effect/rpc@16c2356",
+      "@effect/sql": "https://pkg.pr.new/Effect-TS/effect/@effect/sql@16c2356",
+      "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@16c2356",
+      "effect": "https://pkg.pr.new/Effect-TS/effect@16c2356"
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "msgpackr-extract"
+    ]
+  },
+  "dependencies": {
+    "msgpackr": "^1.11.2"
   }
 }

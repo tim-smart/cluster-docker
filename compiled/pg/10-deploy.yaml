@@ -15,10 +15,13 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:alpine
+          image: postgres
           ports:
             - containerPort: 5432
               name: postgres
+          args:
+            - '-c'
+            - max_connections=1000
           env:
             - name: POSTGRES_USER
               value: cluster
@@ -34,3 +37,8 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: data
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1

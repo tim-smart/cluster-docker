@@ -3,9 +3,9 @@ import { pipe } from "effect"
 import { postgresCredentials } from "./.env"
 
 const name = "postgres"
-const image = "postgres:alpine"
+const image = "postgres"
 
-const pvc = K.pvc("data", "1Gi", {
+const pvc = K.pvc("data", "100Gi", {
   spec: {
     storageClassName: "gp2",
   },
@@ -16,6 +16,7 @@ const container = pipe(
   K.containerWithPorts(name, image, {
     postgres: 5432,
   }),
+  K.setArgs(["-c", "max_connections=1000"]),
   K.concatEnv({
     POSTGRES_USER: postgresCredentials.DB_USER,
     POSTGRES_PASSWORD: postgresCredentials.DB_PASSWORD,
@@ -24,6 +25,7 @@ const container = pipe(
 )
 const deployment = pipe(
   K.deploymentWithContainer(name, container),
+  K.setDeploymentRollingUpdate({ maxSurge: 1, maxUnavailable: 1 }),
   K.appendVolumeAndMount({
     volume,
     mountPath: "/var/lib/postgresql/data",

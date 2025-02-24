@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod
+  namespace: pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod
+  template:
+    metadata:
+      labels:
+        app: pod
+    spec:
+      containers:
+        - name: pod
+          image: timsmart/effect-cluster:pod
+          ports:
+            - containerPort: 8080
+              name: tcp
+          imagePullPolicy: Always
+          env:
+            - name: DB_HOST
+              value: postgres.postgres.svc
+            - name: DB_PORT
+              value: '5432'
+            - name: DB_DATABASE
+              value: effect_cluster
+            - name: DB_USER
+              value: cluster
+            - name: DB_PASSWORD
+              value: cluster
+            - name: SHARD_MANAGER_HOST
+              value: shard-manager.shard-manager.svc
+            - name: HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
