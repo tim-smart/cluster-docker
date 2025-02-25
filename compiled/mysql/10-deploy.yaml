@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:9
+          ports:
+            - containerPort: 3306
+              name: mysql
+          args:
+            - '--max-connections=1000'
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: cluster
+            - name: MYSQL_DATABASE
+              value: effect_cluster
+            - name: MYSQL_USER
+              value: cluster
+            - name: MYSQL_PASSWORD
+              value: cluster
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql
+              subPath: mysql-data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1

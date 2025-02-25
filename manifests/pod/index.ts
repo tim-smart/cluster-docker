@@ -1,14 +1,14 @@
 import * as K from "@fpk/k8s"
 import { pipe } from "effect"
-import { postgresCredentials } from "../pg/.env"
+import { mysqlCredentials } from "../mysql/.env"
 
 const name = "pod"
 const image = "timsmart/effect-cluster:pod"
 
 const container = pipe(
-  K.containerWithPorts(name, image, { tcp: 8080 }),
+  K.containerWithPorts(name, image, { tcp: 34431 }),
   K.setImagePullPolicy("Always"),
-  K.concatEnv(postgresCredentials),
+  K.concatEnv(mysqlCredentials),
   K.concatEnv({
     SHARD_MANAGER_HOST: "shard-manager.shard-manager.svc",
     HOST: { fieldRef: { fieldPath: "status.podIP" } },
@@ -17,8 +17,23 @@ const container = pipe(
     cpu: "100m",
     memory: "128Mi",
   }),
+  K.setLivenessProbe({
+    httpGet: undefined,
+    tcpSocket: { port: 34431 },
+    initialDelaySeconds: 5,
+    periodSeconds: 10,
+  }),
+  K.setReadinessProbe({
+    httpGet: undefined,
+    tcpSocket: { port: 34431 },
+    initialDelaySeconds: 5,
+    periodSeconds: 10,
+  }),
 )
-const deployment = K.deploymentWithContainer(name, container)
+const deployment = pipe(
+  K.deploymentWithContainer(name, container),
+  K.setReplicas(50),
+)
 
 export default K.withNamespace(name)({
   "10-deploy": deployment,

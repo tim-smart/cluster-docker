@@ -1,7 +1,7 @@
-import { PgClient } from "@effect/sql-pg"
+import { MysqlClient } from "@effect/sql-mysql2"
 import { Config } from "effect"
 
-export const SqlLayer = PgClient.layerConfig({
+export const SqlLayer = MysqlClient.layerConfig({
   database: Config.string("DB_DATABASE"),
   username: Config.string("DB_USER"),
   password: Config.redacted("DB_PASSWORD"),

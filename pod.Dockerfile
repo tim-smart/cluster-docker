@@ -4,8 +4,7 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml /app/
-COPY dist/pod.js /app/pod.js
-
 RUN corepack pnpm install --frozen-lockfile --prod
+COPY dist/pod.js /app/pod.js
 
 CMD ["node", "pod.js"]

@@ -4,7 +4,7 @@ metadata:
   name: pod
   namespace: pod
 spec:
-  replicas: 1
+  replicas: 50
   selector:
     matchLabels:
       app: pod
@@ -17,14 +17,14 @@ spec:
         - name: pod
           image: timsmart/effect-cluster:pod
           ports:
-            - containerPort: 8080
+            - containerPort: 34431
               name: tcp
           imagePullPolicy: Always
           env:
             - name: DB_HOST
-              value: postgres.postgres.svc
+              value: mysql.mysql.svc
             - name: DB_PORT
-              value: '5432'
+              value: '3306'
             - name: DB_DATABASE
               value: effect_cluster
             - name: DB_USER
@@ -41,3 +41,13 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
+          livenessProbe:
+            tcpSocket:
+              port: 34431
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 34431
+            initialDelaySeconds: 5
+            periodSeconds: 10
