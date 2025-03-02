@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pod
-  namespace: pod
+  name: runner
+  namespace: runner
 spec:
   replicas: 50
   selector:
     matchLabels:
-      app: pod
+      app: runner
   template:
     metadata:
       labels:
-        app: pod
+        app: runner
     spec:
       containers:
-        - name: pod
-          image: timsmart/effect-cluster:pod
+        - name: runner
+          image: timsmart/effect-cluster:runner
           ports:
             - containerPort: 34431
               name: tcp

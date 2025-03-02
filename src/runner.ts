@@ -1,5 +1,5 @@
 import { DeliverAt, Entity, Singleton } from "@effect/cluster"
-import { NodeClusterSocketPods, NodeRuntime } from "@effect/platform-node"
+import { NodeClusterRunnerSocket, NodeRuntime } from "@effect/platform-node"
 import { Rpc } from "@effect/rpc"
 import {
   Array,
@@ -13,6 +13,17 @@ import {
   Stream,
 } from "effect"
 import { SqlLayer } from "./Sql"
+
+class SleepPayload
+  extends Schema.Class<SleepPayload>("SleepPayload")({
+    wakeUpAt: Schema.Number,
+  })
+  implements DeliverAt.DeliverAt
+{
+  [DeliverAt.symbol]() {
+    return DateTime.unsafeMake(this.wakeUpAt)
+  }
+}
 
 const Counter = Entity.make("Counter", [
   Rpc.make("Increment", {
@@ -38,16 +49,7 @@ const Counter = Entity.make("Counter", [
   }),
 
   Rpc.make("Sleep", {
-    payload: class SleepPayload
-      extends Schema.Class<SleepPayload>("SleepPayload")({
-        wakeUpAt: Schema.Number,
-      })
-      implements DeliverAt.DeliverAt
-    {
-      [DeliverAt.symbol]() {
-        return DateTime.unsafeMake(this.wakeUpAt)
-      }
-    },
+    payload: SleepPayload,
   }),
 
   Rpc.make("Stream", {
@@ -58,11 +60,11 @@ const Counter = Entity.make("Counter", [
 
 const CounterLive = Counter.toLayer(
   Effect.gen(function* () {
-    const podAddress = yield* Entity.CurrentPodAddress
+    const runnerAddress = yield* Entity.CurrentRunnerAddress
     const address = yield* Entity.CurrentAddress
     yield* Effect.annotateLogs(Effect.log("Creating Counter"), {
       address,
-      pod: podAddress,
+      runner: runnerAddress,
     })
 
     let state = 0
@@ -104,7 +106,7 @@ const CounterLive = Counter.toLayer(
   { maxIdleTime: "10 seconds", concurrency: 100 },
 )
 
-const SendMessages = Array.makeBy(1, (i) =>
+const SendMessages = Array.makeBy(3, (i) =>
   Singleton.make(
     `SendMessage${i}`,
     Effect.gen(function* () {
@@ -168,12 +170,9 @@ const Entities = Layer.mergeAll(
   ...SendStreams,
 )
 
-const ShardingLive = NodeClusterSocketPods.layer({
-  storage: "sql",
-  shardingConfig: {
-    numberOfShards: 1000,
-  },
-}).pipe(Layer.provide(SqlLayer))
+const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
+  Layer.provide(SqlLayer),
+)
 
 Entities.pipe(
   Layer.provide(ShardingLive),

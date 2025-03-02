@@ -2,8 +2,8 @@ import * as K from "@fpk/k8s"
 import { pipe } from "effect"
 import { mysqlCredentials } from "../mysql/.env"
 
-const name = "pod"
-const image = "timsmart/effect-cluster:pod"
+const name = "runner"
+const image = "timsmart/effect-cluster:runner"
 
 const container = pipe(
   K.containerWithPorts(name, image, { tcp: 34431 }),
