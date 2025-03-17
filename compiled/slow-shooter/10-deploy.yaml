@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slow-shooter
+  namespace: slow-shooter
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: slow-shooter
+  template:
+    metadata:
+      labels:
+        app: slow-shooter
+    spec:
+      containers:
+        - name: slow-shooter
+          image: timsmart/effect-cluster:ed-runner
+          ports:
+            - containerPort: 34431
+              name: tcp
+          args:
+            - node
+            - ed-slow-shooter.js
+          imagePullPolicy: Always
+          env:
+            - name: DB_HOST
+              value: mysql.mysql.svc
+            - name: DB_PORT
+              value: '3306'
+            - name: DB_DATABASE
+              value: effect_cluster
+            - name: DB_USER
+              value: cluster
+            - name: DB_PASSWORD
+              value: cluster
+            - name: SHARD_MANAGER_HOST
+              value: shard-manager.shard-manager.svc
+            - name: HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          livenessProbe:
+            tcpSocket:
+              port: 34431
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 34431
+            initialDelaySeconds: 5
+            periodSeconds: 10

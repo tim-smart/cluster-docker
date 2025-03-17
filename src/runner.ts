@@ -1,4 +1,4 @@
-import { DeliverAt, Entity, Singleton } from "@effect/cluster"
+import { ClusterSchema, DeliverAt, Entity, Singleton } from "@effect/cluster"
 import { NodeClusterRunnerSocket, NodeRuntime } from "@effect/platform-node"
 import { Rpc } from "@effect/rpc"
 import {
@@ -39,9 +39,7 @@ const Counter = Entity.make("Counter", [
   Rpc.make("Never", {
     payload: class NeverPayload extends Schema.Class<NeverPayload>(
       "NeverPayload",
-    )({
-      messageId: Schema.String,
-    }) {
+    )({ messageId: Schema.String }) {
       [PrimaryKey.symbol]() {
         return this.messageId
       }
@@ -56,7 +54,7 @@ const Counter = Entity.make("Counter", [
     success: Schema.Number,
     stream: true,
   }),
-])
+]).annotateRpcs(ClusterSchema.Persisted, true)
 
 const CounterLive = Counter.toLayer(
   Effect.gen(function* () {
@@ -164,10 +162,10 @@ const SendSleep = Singleton.make(
 
 const Entities = Layer.mergeAll(
   CounterLive,
-  SendNever,
-  SendSleep,
+  // SendNever,
+  // SendSleep,
   ...SendMessages,
-  ...SendStreams,
+  // ...SendStreams,
 )
 
 const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
