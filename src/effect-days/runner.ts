@@ -7,10 +7,11 @@ import { Battleship } from "./schema"
 const BattleshipLive = Battleship.toLayer(
   Effect.gen(function* () {
     const address = yield* Entity.CurrentAddress
+
     return {
       Shoot: Effect.fnUntraced(
         function* (_) {
-          yield* Effect.log("Shoot done")
+          yield* Effect.log("Boom!")
         },
         (effect, { payload }) =>
           Effect.annotateLogs(effect, {
@@ -18,6 +19,7 @@ const BattleshipLive = Battleship.toLayer(
             target: payload.target,
           }),
       ),
+
       ShootWithDelay: Effect.fnUntraced(
         function* (envelope) {
           yield* Effect.log("ShootWithDelay received")
@@ -30,6 +32,7 @@ const BattleshipLive = Battleship.toLayer(
             target: payload.target,
           }),
       ),
+
       ShootAt: Effect.fnUntraced(
         function* (_) {
           yield* Effect.log("ShootAt done")
