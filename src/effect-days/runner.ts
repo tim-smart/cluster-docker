@@ -46,9 +46,14 @@ const BattleshipLive = Battleship.toLayer(
 
 const CronShip = Singleton.make(
   "CronShip",
-  Effect.log("The CronShip is cronning").pipe(
-    Effect.repeat(Schedule.cron("* * * * *")),
-  ),
+  Effect.gen(function* () {
+    yield* Effect.log("The CronShip is sailing")
+    yield* Effect.addFinalizer(() => Effect.log("The CronShip is sinking"))
+
+    yield* Effect.log("The CronShip is cronning").pipe(
+      Effect.repeat(Schedule.cron("* * * * *")),
+    )
+  }),
 )
 
 const Entities = Layer.mergeAll(BattleshipLive, CronShip)

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: battleships
-          image: timsmart/effect-cluster:ed-runner
+          image: timsmart/effect-cluster:runner
           ports:
             - containerPort: 34431
               name: tcp

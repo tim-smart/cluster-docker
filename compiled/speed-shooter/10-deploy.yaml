@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shooter
-  namespace: shooter
+  name: speed-shooter
+  namespace: speed-shooter
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: shooter
+      app: speed-shooter
   template:
     metadata:
       labels:
-        app: shooter
+        app: speed-shooter
     spec:
       containers:
-        - name: shooter
+        - name: speed-shooter
           image: timsmart/effect-cluster:runner
           ports:
             - containerPort: 34431
               name: tcp
           args:
             - node
-            - ed-shooter.js
+            - ed-speed-shooter.js
           imagePullPolicy: Always
           env:
             - name: DB_HOST

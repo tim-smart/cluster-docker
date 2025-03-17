@@ -1,13 +1,14 @@
 import { NodeClusterRunnerSocket, NodeRuntime } from "@effect/platform-node"
-import { Effect, Iterable, Layer } from "effect"
+import { Config, Effect, Iterable, Layer, Logger } from "effect"
 import { SqlLayer } from "../Sql"
 import { Battleship } from "./schema"
 
 const program = Effect.gen(function* () {
   const client = yield* Battleship.client
+  const start = yield* Config.integer("START_SHIP")
 
   yield* Effect.forEach(
-    Iterable.range(1, 10),
+    Iterable.range(start, start + 9),
     Effect.fnUntraced(function* (i) {
       const ship = `ship-${i}`
       yield* Effect.log(`Shooting at ${ship}`)
@@ -19,6 +20,8 @@ const program = Effect.gen(function* () {
     }),
     { concurrency: "unbounded" },
   )
+
+  yield* Effect.never
 })
 
 const ClusterLayer = NodeClusterRunnerSocket.layer({
@@ -26,4 +29,7 @@ const ClusterLayer = NodeClusterRunnerSocket.layer({
   clientOnly: true,
 }).pipe(Layer.provide(SqlLayer))
 
-program.pipe(Effect.provide(ClusterLayer), NodeRuntime.runMain)
+program.pipe(
+  Effect.provide(ClusterLayer.pipe(Layer.provide(Logger.pretty))),
+  Effect.runFork,
+)

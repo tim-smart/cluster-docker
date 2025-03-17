@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: slow-shooter
-          image: timsmart/effect-cluster:ed-runner
+          image: timsmart/effect-cluster:runner
           ports:
             - containerPort: 34431
               name: tcp
@@ -40,17 +40,9 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
+            - name: START_SHIP
+              value: '1'
           resources:
             requests:
               cpu: 100m
               memory: 128Mi
-          livenessProbe:
-            tcpSocket:
-              port: 34431
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          readinessProbe:
-            tcpSocket:
-              port: 34431
-            initialDelaySeconds: 5
-            periodSeconds: 10

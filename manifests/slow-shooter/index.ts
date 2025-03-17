@@ -3,7 +3,7 @@ import { pipe } from "effect"
 import { mysqlCredentials } from "../mysql/.env"
 
 const name = "slow-shooter"
-const image = "timsmart/effect-cluster:ed-runner"
+const image = "timsmart/effect-cluster:runner"
 
 const container = pipe(
   K.containerWithPorts(name, image, { tcp: 34431 }),
@@ -13,22 +13,11 @@ const container = pipe(
   K.concatEnv({
     SHARD_MANAGER_HOST: "shard-manager.shard-manager.svc",
     HOST: { fieldRef: { fieldPath: "status.podIP" } },
+    START_SHIP: "1",
   }),
   K.setResourceRequests({
     cpu: "100m",
     memory: "128Mi",
-  }),
-  K.setLivenessProbe({
-    httpGet: undefined,
-    tcpSocket: { port: 34431 },
-    initialDelaySeconds: 5,
-    periodSeconds: 10,
-  }),
-  K.setReadinessProbe({
-    httpGet: undefined,
-    tcpSocket: { port: 34431 },
-    initialDelaySeconds: 5,
-    periodSeconds: 10,
   }),
 )
 const deployment = pipe(

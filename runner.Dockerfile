@@ -9,5 +9,6 @@ COPY dist/runner.js /app/runner.js
 COPY dist/effect-days/runner.js /app/ed-runner.js
 COPY dist/effect-days/shooter.js /app/ed-shooter.js
 COPY dist/effect-days/slow-shooter.js /app/ed-slow-shooter.js
+COPY dist/effect-days/speed-shooter.js /app/ed-speed-shooter.js
 
 CMD ["node", "runner.js"]

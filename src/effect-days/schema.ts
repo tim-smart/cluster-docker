@@ -33,9 +33,11 @@ export const Battleship = Entity.make("Battleship", [
   Rpc.make("Shoot", {
     payload: { target: Schema.Int },
   }),
+
   Rpc.make("ShootWithDelay", {
     payload: DelayedBullet,
   }),
+
   Rpc.make("ShootAt", {
     payload: DeliverAtBullet,
   }),

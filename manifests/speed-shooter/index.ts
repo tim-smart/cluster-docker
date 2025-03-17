@@ -2,12 +2,12 @@ import * as K from "@fpk/k8s"
 import { pipe } from "effect"
 import { mysqlCredentials } from "../mysql/.env"
 
-const name = "battleships"
+const name = "speed-shooter"
 const image = "timsmart/effect-cluster:runner"
 
 const container = pipe(
   K.containerWithPorts(name, image, { tcp: 34431 }),
-  K.setArgs(["node", "ed-runner.js"]),
+  K.setArgs(["node", "ed-speed-shooter.js"]),
   K.setImagePullPolicy("Always"),
   K.concatEnv(mysqlCredentials),
   K.concatEnv({
@@ -18,22 +18,10 @@ const container = pipe(
     cpu: "100m",
     memory: "128Mi",
   }),
-  K.setLivenessProbe({
-    httpGet: undefined,
-    tcpSocket: { port: 34431 },
-    initialDelaySeconds: 5,
-    periodSeconds: 10,
-  }),
-  K.setReadinessProbe({
-    httpGet: undefined,
-    tcpSocket: { port: 34431 },
-    initialDelaySeconds: 5,
-    periodSeconds: 10,
-  }),
 )
 const deployment = pipe(
   K.deploymentWithContainer(name, container),
-  K.setReplicas(1),
+  K.setReplicas(0),
 )
 
 export default K.withNamespace(name)({
