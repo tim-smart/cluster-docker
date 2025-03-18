@@ -5,15 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87
-  '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87
-  '@effect/platform-node': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87
-  '@effect/platform-node-shared': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87
-  '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87
-  '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87
-  '@effect/sql-pg': https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87
-  '@effect/sql-mysql2': https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87
-  effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+  '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91
+  '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91
+  '@effect/platform-node': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91
+  '@effect/platform-node-shared': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91
+  '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91
+  '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91
+  '@effect/sql-pg': https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91
+  '@effect/sql-mysql2': https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91
+  effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
 
 importers:
 
@@ -24,29 +24,29 @@ importers:
         version: 1.11.2
     devDependencies:
       '@effect/cluster':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/platform':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/platform-node':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/platform-node-shared':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/rpc':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/sql':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/sql-mysql2':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@effect/sql-pg':
-        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+        specifier: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@fpk/cli':
         specifier: ^0.1.58
         version: 0.1.58(@types/node@22.13.8)
@@ -54,8 +54,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1(kubernetes-types@1.30.0)
       effect:
-        specifier: https://pkg.pr.new/Effect-TS/effect@30eea87
-        version: https://pkg.pr.new/Effect-TS/effect@30eea87
+        specifier: https://pkg.pr.new/Effect-TS/effect@c05ca91
+        version: https://pkg.pr.new/Effect-TS/effect@c05ca91
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -69,14 +69,14 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@effect/cluster@https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87}
-    version: 0.28.2
+  '@effect/cluster@https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91}
+    version: 0.28.3
     peerDependencies:
-      '@effect/platform': ^0.79.2
-      '@effect/rpc': ^0.54.2
-      '@effect/sql': ^0.32.2
-      effect: ^3.13.11
+      '@effect/platform': ^0.79.3
+      '@effect/rpc': ^0.54.3
+      '@effect/sql': ^0.32.3
+      effect: ^3.13.12
 
   '@effect/experimental@0.41.4':
     resolution: {integrity: sha512-celrEhl/K2Eis906d3/oOv/3/w+M1jcONvrChG5qQgWYo6CJjSJm4xXopcTbiBhxAhvkd06zABkB3tr/lptUCA==}
@@ -98,64 +98,64 @@ packages:
       ws:
         optional: true
 
-  '@effect/platform-node-shared@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87}
-    version: 0.29.2
+  '@effect/platform-node-shared@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91}
+    version: 0.29.3
     peerDependencies:
-      '@effect/cluster': ^0.28.2
-      '@effect/platform': ^0.79.2
-      '@effect/rpc': ^0.54.2
-      '@effect/sql': ^0.32.2
-      effect: ^3.13.11
+      '@effect/cluster': ^0.28.3
+      '@effect/platform': ^0.79.3
+      '@effect/rpc': ^0.54.3
+      '@effect/sql': ^0.32.3
+      effect: ^3.13.12
 
-  '@effect/platform-node@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87}
-    version: 0.75.2
+  '@effect/platform-node@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91}
+    version: 0.75.3
     peerDependencies:
-      '@effect/cluster': ^0.28.2
-      '@effect/platform': ^0.79.2
-      '@effect/rpc': ^0.54.2
-      '@effect/sql': ^0.32.2
-      effect: ^3.13.11
+      '@effect/cluster': ^0.28.3
+      '@effect/platform': ^0.79.3
+      '@effect/rpc': ^0.54.3
+      '@effect/sql': ^0.32.3
+      effect: ^3.13.12
 
-  '@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87}
-    version: 0.79.2
+  '@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91}
+    version: 0.79.3
     peerDependencies:
-      effect: ^3.13.11
+      effect: ^3.13.12
 
-  '@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87}
-    version: 0.54.2
+  '@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91}
+    version: 0.54.3
     peerDependencies:
-      '@effect/platform': ^0.79.2
-      effect: ^3.13.11
+      '@effect/platform': ^0.79.3
+      effect: ^3.13.12
 
-  '@effect/sql-mysql2@https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87}
-    version: 0.33.2
+  '@effect/sql-mysql2@https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91}
+    version: 0.33.3
     peerDependencies:
-      '@effect/experimental': ^0.43.2
-      '@effect/platform': ^0.79.2
-      '@effect/sql': ^0.32.2
-      effect: ^3.13.11
+      '@effect/experimental': ^0.43.3
+      '@effect/platform': ^0.79.3
+      '@effect/sql': ^0.32.3
+      effect: ^3.13.12
 
-  '@effect/sql-pg@https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87}
-    version: 0.33.2
+  '@effect/sql-pg@https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91}
+    version: 0.33.3
     peerDependencies:
-      '@effect/experimental': ^0.43.2
-      '@effect/platform': ^0.79.2
-      '@effect/sql': ^0.32.2
-      effect: ^3.13.11
+      '@effect/experimental': ^0.43.3
+      '@effect/platform': ^0.79.3
+      '@effect/sql': ^0.32.3
+      effect: ^3.13.12
 
-  '@effect/sql@https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87':
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87}
-    version: 0.32.2
+  '@effect/sql@https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91':
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91}
+    version: 0.32.3
     peerDependencies:
-      '@effect/experimental': ^0.43.2
-      '@effect/platform': ^0.79.2
-      effect: ^3.13.11
+      '@effect/experimental': ^0.43.3
+      '@effect/platform': ^0.79.3
+      effect: ^3.13.12
 
   '@esbuild/aix-ppc64@0.25.1':
     resolution: {integrity: sha512-kfYGy8IdzTGy+z0vFGvExZtxkFlA4zAxgKEahG9KE1ScBjpQnFsNOX8KTU5ojNru5ed5CVoJYXFtoxaq5nFbjQ==}
@@ -842,9 +842,9 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  effect@https://pkg.pr.new/Effect-TS/effect@30eea87:
-    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect@30eea87}
-    version: 3.13.11
+  effect@https://pkg.pr.new/Effect-TS/effect@c05ca91:
+    resolution: {tarball: https://pkg.pr.new/Effect-TS/effect@c05ca91}
+    version: 3.13.12
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1416,45 +1416,45 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@effect/cluster@https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/cluster@https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
 
-  '@effect/experimental@0.41.4(@effect/platform-node@0.75.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)(ws@8.18.1)':
+  '@effect/experimental@0.41.4(@effect/platform-node@0.75.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)(ws@8.18.1)':
     dependencies:
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       msgpackr: 1.11.2
       uuid: 11.1.0
     optionalDependencies:
-      '@effect/platform-node': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+      '@effect/platform-node': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       ws: 8.18.1
 
-  '@effect/platform-node-shared@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/platform-node-shared@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+      '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@parcel/watcher': 2.5.1
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       multipasta: 0.2.5
       ws: 8.18.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/platform-node@https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/platform-node-shared': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@30eea87(@effect/cluster@0.28.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      '@effect/cluster': https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/platform-node-shared': https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91(@effect/cluster@0.28.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/rpc': https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       mime: 3.0.0
       undici: 7.5.0
       ws: 8.18.1
@@ -1462,42 +1462,42 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       find-my-way-ts: 0.1.5
       msgpackr: 1.11.2
       multipasta: 0.2.5
 
-  '@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@30eea87(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/rpc@https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
 
-  '@effect/sql-mysql2@https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/sql-mysql2@https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)(ws@8.18.1)
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)(ws@8.18.1)
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@opentelemetry/semantic-conventions': 1.30.0
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       mysql2: 3.13.0
 
-  '@effect/sql-pg@https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(@effect/sql@0.32.2)(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/sql-pg@https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(@effect/sql@0.32.3)(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)(ws@8.18.1)
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
-      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)(ws@8.18.1)
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
+      '@effect/sql': https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@opentelemetry/semantic-conventions': 1.30.0
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       postgres: 3.4.5
 
-  '@effect/sql@https://pkg.pr.new/Effect-TS/effect/@effect/sql@30eea87(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)':
+  '@effect/sql@https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91(@effect/experimental@0.41.4)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)':
     dependencies:
-      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.2)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87))(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)(ws@8.18.1)
-      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@30eea87(effect@https://pkg.pr.new/Effect-TS/effect@30eea87)
+      '@effect/experimental': 0.41.4(@effect/platform-node@0.75.3)(@effect/platform@https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91))(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)(ws@8.18.1)
+      '@effect/platform': https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91(effect@https://pkg.pr.new/Effect-TS/effect@c05ca91)
       '@opentelemetry/semantic-conventions': 1.30.0
-      effect: https://pkg.pr.new/Effect-TS/effect@30eea87
+      effect: https://pkg.pr.new/Effect-TS/effect@c05ca91
       uuid: 11.1.0
 
   '@esbuild/aix-ppc64@0.25.1':
@@ -2097,7 +2097,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  effect@https://pkg.pr.new/Effect-TS/effect@30eea87:
+  effect@https://pkg.pr.new/Effect-TS/effect@c05ca91:
     dependencies:
       '@standard-schema/spec': 1.0.0
       fast-check: 3.23.2
