@@ -54,3 +54,15 @@ spec:
               port: 34431
             initialDelaySeconds: 5
             periodSeconds: 10
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - battleships
+                topologyKey: kubernetes.io/hostname

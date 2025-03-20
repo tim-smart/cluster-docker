@@ -1,6 +1,7 @@
 import * as K from "@fpk/k8s"
 import { pipe } from "effect"
 import { mysqlCredentials } from "../mysql/.env"
+import { hostnameAffinity } from "../../lib/affinity"
 
 const name = "battleships"
 const image = "timsmart/effect-cluster:runner"
@@ -31,8 +32,17 @@ const container = pipe(
     periodSeconds: 10,
   }),
 )
+
 const deployment = pipe(
-  K.deploymentWithContainer(name, container),
+  K.deploymentWithContainer(name, container, {
+    spec: {
+      template: {
+        spec: {
+          affinity: hostnameAffinity(name),
+        },
+      },
+    },
+  }),
   K.setReplicas(1),
 )
 
