@@ -32,7 +32,7 @@ export class DeliverAtBullet
 export const Battleship = Entity.make("Battleship", [
   Rpc.make("Shoot", {
     payload: { target: Schema.Int },
-  }),
+  }).annotate(ClusterSchema.Persisted, false),
 
   Rpc.make("ShootWithDelay", {
     payload: DelayedBullet,

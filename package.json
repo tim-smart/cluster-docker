@@ -9,37 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@effect/cluster": "https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91",
-    "@effect/platform": "https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91",
-    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91",
-    "@effect/platform-node-shared": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91",
-    "@effect/rpc": "https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91",
-    "@effect/sql": "https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91",
-    "@effect/sql-mysql2": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91",
-    "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91",
+    "@effect/cluster": "^0.29.1",
+    "@effect/platform": "^0.80.1",
+    "@effect/platform-node": "^0.76.1",
+    "@effect/rpc": "^0.55.1",
+    "@effect/sql": "^0.33.1",
+    "@effect/sql-mysql2": "^0.34.1",
+    "@effect/sql-pg": "^0.34.1",
     "@fpk/cli": "^0.1.58",
     "@fpk/k8s": "^0.6.1",
-    "effect": "https://pkg.pr.new/Effect-TS/effect@c05ca91",
+    "effect": "^3.14.1",
     "prettier": "^3.5.3",
     "tsup": "^8.4.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@effect/cluster": "https://pkg.pr.new/Effect-TS/effect/@effect/cluster@c05ca91",
-      "@effect/platform": "https://pkg.pr.new/Effect-TS/effect/@effect/platform@c05ca91",
-      "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node@c05ca91",
-      "@effect/platform-node-shared": "https://pkg.pr.new/Effect-TS/effect/@effect/platform-node-shared@c05ca91",
-      "@effect/rpc": "https://pkg.pr.new/Effect-TS/effect/@effect/rpc@c05ca91",
-      "@effect/sql": "https://pkg.pr.new/Effect-TS/effect/@effect/sql@c05ca91",
-      "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-pg@c05ca91",
-      "@effect/sql-mysql2": "https://pkg.pr.new/Effect-TS/effect/@effect/sql-mysql2@c05ca91",
-      "effect": "https://pkg.pr.new/Effect-TS/effect@c05ca91"
-    },
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "msgpackr-extract"
-    ]
   },
   "dependencies": {
     "msgpackr": "^1.11.2"
