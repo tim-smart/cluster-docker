@@ -9,7 +9,7 @@ const image = "timsmart/effect-cluster:shard-manager"
 const container = pipe(
   K.containerWithPorts(name, image, { tcp: 8080 }),
   K.setImagePullPolicy("Always"),
-  K.concatEnv(mysqlCredentials),
+  K.concatEnv(postgresCredentials),
   K.concatEnv({
     SHARD_MANAGER_HOST: { fieldRef: { fieldPath: "status.podIP" } },
   }),

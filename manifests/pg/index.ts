@@ -5,11 +5,7 @@ import { postgresCredentials } from "./.env"
 const name = "postgres"
 const image = "postgres"
 
-const pvc = K.pvc("data", "100Gi", {
-  spec: {
-    storageClassName: "gp2",
-  },
-})
+const pvc = K.pvc("data", "100Gi")
 const volume = K.volumeFromPvc("data", pvc)
 
 const container = pipe(

@@ -9,20 +9,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@effect/cluster": "^0.29.1",
-    "@effect/platform": "^0.80.1",
-    "@effect/platform-node": "^0.76.1",
-    "@effect/rpc": "^0.55.1",
-    "@effect/sql": "^0.33.1",
-    "@effect/sql-mysql2": "^0.34.1",
-    "@effect/sql-pg": "^0.34.1",
+    "@effect/cluster": "^0.48.5",
+    "@effect/platform": "^0.90.9",
+    "@effect/platform-node": "^0.96.1",
+    "@effect/rpc": "^0.69.2",
+    "@effect/sql": "^0.44.2",
+    "@effect/sql-mysql2": "^0.45.1",
+    "@effect/sql-pg": "^0.45.1",
     "@fpk/cli": "^0.1.58",
-    "@fpk/k8s": "^0.6.1",
-    "effect": "^3.14.1",
-    "prettier": "^3.5.3",
-    "tsup": "^8.4.0"
+    "@fpk/k8s": "^0.7.0",
+    "effect": "^3.17.13",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0"
   },
   "dependencies": {
-    "msgpackr": "^1.11.2"
-  }
+    "msgpackr": "^1.11.5"
+  },
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
 }

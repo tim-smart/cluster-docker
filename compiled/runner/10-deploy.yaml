@@ -4,7 +4,7 @@ metadata:
   name: runner
   namespace: runner
 spec:
-  replicas: 50
+  replicas: 5
   selector:
     matchLabels:
       app: runner
@@ -22,9 +22,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DB_HOST
-              value: mysql.mysql.svc
+              value: postgres.postgres.svc
             - name: DB_PORT
-              value: '3306'
+              value: '5432'
             - name: DB_DATABASE
               value: effect_cluster
             - name: DB_USER

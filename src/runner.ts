@@ -7,6 +7,7 @@ import {
   Effect,
   Layer,
   Logger,
+  LogLevel,
   Mailbox,
   PrimaryKey,
   Schema,
@@ -58,17 +59,13 @@ const Counter = Entity.make("Counter", [
 
 const CounterLive = Counter.toLayer(
   Effect.gen(function* () {
-    const runnerAddress = yield* Entity.CurrentRunnerAddress
     const address = yield* Entity.CurrentAddress
-    yield* Effect.annotateLogs(Effect.log("Creating Counter"), {
-      address,
-      runner: runnerAddress,
-    })
 
     let state = 0
 
     return {
       Increment: Effect.fnUntraced(function* ({ payload: { amount } }) {
+        yield* Effect.log("Increment", address.toString())
         // yield* Effect.sleep(1000)
         state += amount
         return state
@@ -104,20 +101,17 @@ const CounterLive = Counter.toLayer(
   { maxIdleTime: "10 seconds", concurrency: 100 },
 )
 
-const SendMessages = Array.makeBy(3, (i) =>
+const SendMessages = Array.makeBy(1, (i) =>
   Singleton.make(
     `SendMessage${i}`,
     Effect.gen(function* () {
       const makeClient = yield* Counter.client
-      const semaphore = yield* Effect.makeSemaphore(50)
+      // const semaphore = yield* Effect.makeSemaphore(50)
       const clients = Array.makeBy(1000, (i) => makeClient(`client-${i}`))
       console.log("SendMessages started")
       for (let i = 0; true; i++) {
         const client = clients[i % clients.length]
-        yield* semaphore.take(1)
-        yield* client
-          .Increment({ amount: 1 })
-          .pipe(Effect.ensuring(semaphore.release(1)), Effect.fork)
+        yield* client.Increment({ amount: 1 })
       }
     }),
   ),
@@ -174,7 +168,7 @@ const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
 
 Entities.pipe(
   Layer.provide(ShardingLive),
-  Layer.provide(Logger.json),
+  Layer.provide(Logger.minimumLogLevel(LogLevel.All)),
   Layer.launch,
-  NodeRuntime.runMain({ disablePrettyLogger: true }),
+  NodeRuntime.runMain,
 )
