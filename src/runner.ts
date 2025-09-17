@@ -1,19 +1,18 @@
-import { ClusterSchema, DeliverAt, Entity, Singleton } from "@effect/cluster"
-import { NodeClusterRunnerSocket, NodeRuntime } from "@effect/platform-node"
-import { Rpc } from "@effect/rpc"
 import {
-  Array,
-  DateTime,
-  Effect,
-  Layer,
-  Logger,
-  LogLevel,
-  Mailbox,
-  PrimaryKey,
-  Schema,
-  Stream,
-} from "effect"
+  ClusterSchema,
+  DeliverAt,
+  Entity,
+  Singleton,
+} from "effect/unstable/cluster"
+import { NodeClusterRunnerSocket, NodeRuntime } from "@effect/platform-node"
+import { Rpc } from "effect/unstable/rpc"
+import { Effect, Layer, Queue } from "effect"
 import { SqlLayer } from "./Sql"
+import { Schema } from "effect/schema"
+import { DateTime } from "effect/time"
+import { Array } from "effect/collections"
+import { Stream } from "effect/stream"
+import { MinimumLogLevel } from "effect/References"
 
 class SleepPayload
   extends Schema.Class<SleepPayload>("SleepPayload")({
@@ -22,7 +21,7 @@ class SleepPayload
   implements DeliverAt.DeliverAt
 {
   [DeliverAt.symbol]() {
-    return DateTime.unsafeMake(this.wakeUpAt)
+    return DateTime.makeUnsafe(this.wakeUpAt)
   }
 }
 
@@ -38,13 +37,8 @@ const Counter = Entity.make("Counter", [
   }),
 
   Rpc.make("Never", {
-    payload: class NeverPayload extends Schema.Class<NeverPayload>(
-      "NeverPayload",
-    )({ messageId: Schema.String }) {
-      [PrimaryKey.symbol]() {
-        return this.messageId
-      }
-    },
+    payload: { messageId: Schema.String },
+    primaryKey: (_) => _.messageId,
   }),
 
   Rpc.make("Sleep", {
@@ -85,10 +79,10 @@ const CounterLive = Counter.toLayer(
         return Effect.void
       },
       Stream: Effect.fnUntraced(function* () {
-        const mailbox = yield* Mailbox.make<number>()
+        const mailbox = yield* Queue.make<number>()
 
         let i = 0
-        yield* Effect.suspend(() => mailbox.offer(i++)).pipe(
+        yield* Effect.suspend(() => Queue.offer(mailbox, i++)).pipe(
           Effect.andThen(Effect.sleep(1000)),
           Effect.forever,
           Effect.forkScoped,
@@ -168,7 +162,7 @@ const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
 
 Entities.pipe(
   Layer.provide(ShardingLive),
-  Layer.provide(Logger.minimumLogLevel(LogLevel.All)),
+  Layer.provide(Layer.succeed(MinimumLogLevel)("All")),
   Layer.launch,
   NodeRuntime.runMain,
 )

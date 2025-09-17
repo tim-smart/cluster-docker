@@ -9,18 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@effect/cluster": "^0.48.5",
-    "@effect/platform": "^0.90.9",
-    "@effect/platform-node": "^0.96.1",
-    "@effect/rpc": "^0.69.2",
-    "@effect/sql": "^0.44.2",
-    "@effect/sql-mysql2": "^0.45.1",
-    "@effect/sql-pg": "^0.45.1",
-    "@fpk/cli": "^0.1.58",
-    "@fpk/k8s": "^0.7.0",
-    "effect": "^3.17.13",
+    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/platform-node@f80026d",
+    "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/sql-pg@f80026d",
+    "effect": "https://pkg.pr.new/Effect-TS/effect-smol/effect@f80026d",
     "prettier": "^3.6.2",
-    "tsup": "^8.5.0"
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "msgpackr": "^1.11.5"
