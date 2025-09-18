@@ -59,7 +59,7 @@ const CounterLive = Counter.toLayer(
 
     return {
       Increment: Effect.fnUntraced(function* ({ payload: { amount } }) {
-        yield* Effect.log("Increment", address.toString())
+        yield* Effect.log("Increment", address)
         // yield* Effect.sleep(1000)
         state += amount
         return state
@@ -100,11 +100,13 @@ const SendMessages = Array.makeBy(1, (i) =>
     `SendMessage${i}`,
     Effect.gen(function* () {
       const makeClient = yield* Counter.client
+      yield* Effect.addFinalizer(() => Effect.log("SendMessages done"))
       // const semaphore = yield* Effect.makeSemaphore(50)
       const clients = Array.makeBy(1000, (i) => makeClient(`client-${i}`))
       console.log("SendMessages started")
       for (let i = 0; true; i++) {
         const client = clients[i % clients.length]
+        console.log("Sending to", `client-${i % clients.length}`)
         yield* client.Increment({ amount: 1 })
       }
     }),
@@ -162,7 +164,7 @@ const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
 
 Entities.pipe(
   Layer.provide(ShardingLive),
-  Layer.provide(Layer.succeed(MinimumLogLevel)("All")),
+  // Layer.provide(Layer.succeed(MinimumLogLevel)("All")),
   Layer.launch,
   NodeRuntime.runMain,
 )
