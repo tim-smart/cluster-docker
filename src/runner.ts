@@ -49,7 +49,7 @@ const Counter = Entity.make("Counter", [
     success: Schema.Number,
     stream: true,
   }),
-]).annotateRpcs(ClusterSchema.Persisted, false)
+]).annotateRpcs(ClusterSchema.Persisted, true)
 
 const CounterLive = Counter.toLayer(
   Effect.gen(function* () {
