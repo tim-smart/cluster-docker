@@ -105,7 +105,7 @@ const SendMessages = Array.makeBy(1, (i) =>
       const clients = Array.makeBy(1000, (i) => makeClient(`client-${i}`))
       console.log("SendMessages started")
       for (let i = 0; true; i++) {
-        const client = clients[i % clients.length]
+        const client = clients[i % clients.length]!
         console.log("Sending to", `client-${i % clients.length}`)
         yield* client.Increment({ amount: 1 })
       }
@@ -154,13 +154,16 @@ const Entities = Layer.mergeAll(
   CounterLive,
   // SendNever,
   // SendSleep,
-  ...SendMessages,
+  // ...SendMessages,
   // ...SendStreams,
 )
 
-const ShardingLive = NodeClusterRunnerSocket.layer({ storage: "sql" }).pipe(
-  Layer.provide(SqlLayer),
-)
+const ShardingLive = NodeClusterRunnerSocket.layer({
+  runnerHealth: "k8s",
+  runnerHealthK8s: {
+    namespace: "runner",
+  },
+}).pipe(Layer.provide(SqlLayer))
 
 Entities.pipe(
   Layer.provide(ShardingLive),

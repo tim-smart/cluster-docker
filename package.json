@@ -9,9 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/platform-node@fac277a",
-    "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/sql-pg@fac277a",
-    "effect": "https://pkg.pr.new/Effect-TS/effect-smol/effect@fac277a",
+    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/platform-node@f4d3438",
+    "@effect/sql-pg": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/sql-pg@f4d3438",
+    "@fpk/cli": "^0.1.58",
+    "@fpk/k8s": "^0.7.0",
+    "effect": "https://pkg.pr.new/Effect-TS/effect-smol/effect@f4d3438",
+    "kubernetes-types": "^1.30.0",
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"

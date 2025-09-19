@@ -51,3 +51,4 @@ spec:
               port: 34431
             initialDelaySeconds: 5
             periodSeconds: 10
+      serviceAccountName: runner

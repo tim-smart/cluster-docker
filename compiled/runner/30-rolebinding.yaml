@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: health-check-rb
+  namespace: runner
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  name: health-check-role
+  kind: Role
+subjects:
+  - kind: ServiceAccount
+    name: runner
+    namespace: runner
