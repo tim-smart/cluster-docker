@@ -154,7 +154,7 @@ const Entities = Layer.mergeAll(
   CounterLive,
   // SendNever,
   // SendSleep,
-  // ...SendMessages,
+  ...SendMessages,
   // ...SendStreams,
 )
 
