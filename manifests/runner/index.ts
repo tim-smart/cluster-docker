@@ -48,14 +48,14 @@ const container = pipe(
   K.setLivenessProbe({
     httpGet: undefined!,
     tcpSocket: { port: 34431 },
-    initialDelaySeconds: 10,
-    periodSeconds: 30,
+    initialDelaySeconds: 15,
+    periodSeconds: 10,
   }),
   K.setReadinessProbe({
     httpGet: undefined!,
     tcpSocket: { port: 34431 },
-    initialDelaySeconds: 10,
-    periodSeconds: 30,
+    initialDelaySeconds: 15,
+    periodSeconds: 10,
   }),
 )
 const deployment = pipe(

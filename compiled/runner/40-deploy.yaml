@@ -44,11 +44,11 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 34431
-            initialDelaySeconds: 10
-            periodSeconds: 30
+            initialDelaySeconds: 15
+            periodSeconds: 10
           readinessProbe:
             tcpSocket:
               port: 34431
-            initialDelaySeconds: 10
-            periodSeconds: 30
+            initialDelaySeconds: 15
+            periodSeconds: 10
       serviceAccountName: runner
