@@ -29,7 +29,7 @@ const Counter = Entity.make("Counter", [
   Rpc.make("Increment", {
     payload: { amount: Schema.Number },
     success: Schema.Number,
-  }),
+  }).annotate(ClusterSchema.Uninterruptible, true),
 
   Rpc.make("Decrement", {
     payload: { amount: Schema.Number },
@@ -60,7 +60,7 @@ const CounterLive = Counter.toLayer(
     return {
       Increment: Effect.fnUntraced(function* ({ payload: { amount } }) {
         yield* Effect.log("Increment", address)
-        // yield* Effect.sleep(1000)
+        // yield* Effect.sleep("30 seconds")
         state += amount
         return state
       }),
@@ -164,6 +164,13 @@ const ShardingLive = NodeClusterRunnerSocket.layer({
     namespace: "runner",
   },
 }).pipe(Layer.provide(SqlLayer))
+
+process.on("SIGINT", () => {
+  console.log("SIGINT received, shutting down...")
+})
+process.on("SIGTERM", () => {
+  console.log("SIGTERM received, shutting down...")
+})
 
 Entities.pipe(
   Layer.provide(ShardingLive),
